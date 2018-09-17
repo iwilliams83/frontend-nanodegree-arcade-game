@@ -40,16 +40,16 @@ var Player = function(){
 
 Player.prototype.update = function(key){
   if (key === 'up'){
-    this.y -= 20
+    this.y > -20 ? this.y -= 20 : this.y = -20
   }
   else if (key === 'down'){
     this.y < 440 ? this.y += 20 : this.y = 440
   }
   else if (key === 'right'){
-    this.x += 20
+    this.x < 420 ? this.x += 20 : this.x = 420
   }
   else if (key === 'left') {
-    this.x -= 20
+    this.x > -20? this.x -= 20 : this.x = -20
   }
 };
 
