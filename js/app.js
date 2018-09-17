@@ -11,18 +11,6 @@ var Enemy = function(x,y,speed) {
 
 };
 
-// if (this.bearing === 'north'){
-//   this.coordinates[1] += 1
-// }
-// else if(this.bearing === 'east'){
-//   this.coordinates[0] += 1
-// }
-// else if(this.bearing === 'south'){
-//   this.coordinates[1] -= 1
-// }
-// else {
-//   this.coordinates[0] -= 1
-// }
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -52,16 +40,16 @@ var Player = function(){
 
 Player.prototype.update = function(key){
   if (key === 'up'){
-    this.y -= 10
+    this.y -= 20
   }
   else if (key === 'down'){
-    this.y < 440 ? this.y += 10 : this.y = 440
+    this.y < 440 ? this.y += 20 : this.y = 440
   }
   else if (key === 'right'){
-    this.x += 10
+    this.x += 20
   }
   else if (key === 'left') {
-    this.x -= 10
+    this.x -= 20
   }
 };
 
@@ -80,7 +68,7 @@ var player = new Player()
 // Place the player object in a variable called player
 let bug1 = new Enemy(0, 50, 50); //(x, y, speed)
 let bug2 = new Enemy(0, 150, 30);
-let bug3 = new Enemy(0, 250, 70);
+let bug3 = new Enemy(0, 230, 70);
 var allEnemies = [bug1, bug2, bug3];
 
 // This listens for key presses and sends the keys to your
