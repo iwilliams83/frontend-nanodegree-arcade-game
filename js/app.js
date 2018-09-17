@@ -51,6 +51,7 @@ Player.prototype.update = function(key){
   else if (key === 'left') {
     this.x > -20? this.x -= 20 : this.x = -20
   }
+  return {y: this.y, x: this.x}
 };
 
 Player.prototype.render = function(){
@@ -59,6 +60,10 @@ Player.prototype.render = function(){
 
 Player.prototype.handleInput = function(key){
   this.update(key)
+  let y = this.update(key)['y']
+  if (y === -20) {
+    console.log('yay you won!')
+  }
 };
 
 var player = new Player()
