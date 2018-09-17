@@ -66,7 +66,7 @@ var player = new Player()
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-let bug1 = new Enemy(0, 50, 50); //(x, y, speed)
+let bug1 = new Enemy(0, 60, 50); //(x, y, speed)
 let bug2 = new Enemy(0, 150, 30);
 let bug3 = new Enemy(0, 230, 70);
 var allEnemies = [bug1, bug2, bug3];
