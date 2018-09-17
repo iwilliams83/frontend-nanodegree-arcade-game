@@ -17,8 +17,7 @@ var Enemy = function(x,y,speed) {
 Enemy.prototype.update = function(dt) {
   //console.log('dt:', dt)
     // You should multiply any movement by the dt parameter
-
-      this.x < 600 ? this.x = this.x + (this.speed*dt) : this.x = 0
+      this.x < 540 ? this.x = this.x + (this.speed*dt) : this.x = 0
     // which will ensure the game runs at the same speed for
     // all computers.
 };
@@ -74,8 +73,8 @@ var player = new Player()
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 let bug1 = new Enemy(0, 60, 60); //(x, y, speed)
-let bug2 = new Enemy(-10, 150, 50);
-let bug3 = new Enemy(0, 230, 80);
+let bug2 = new Enemy(-10, 150, 140);
+let bug3 = new Enemy(0, 230, 100);
 var allEnemies = [bug1, bug2, bug3];
 
 // This listens for key presses and sends the keys to your
