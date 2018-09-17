@@ -18,7 +18,7 @@ Enemy.prototype.update = function(dt) {
   //console.log('dt:', dt)
     // You should multiply any movement by the dt parameter
 
-      this.x < 500 ? this.x = this.x + (this.speed*dt) : this.x = 0
+      this.x < 600 ? this.x = this.x + (this.speed*dt) : this.x = 0
     // which will ensure the game runs at the same speed for
     // all computers.
 };
@@ -38,6 +38,11 @@ var Player = function(){
   this.sprite = 'images/char-boy.png';
 };
 
+Player.prototype.reset = function(){
+  this.x = 200;
+  this.y = 440;
+}
+
 Player.prototype.update = function(key){
   if (key === 'up'){
     this.y > -20 ? this.y -= 20 : this.y = -20
@@ -51,7 +56,7 @@ Player.prototype.update = function(key){
   else if (key === 'left') {
     this.x > -20? this.x -= 20 : this.x = -20
   }
-  return {y: this.y, x: this.x}
+  return this.y
 };
 
 Player.prototype.render = function(){
@@ -60,10 +65,7 @@ Player.prototype.render = function(){
 
 Player.prototype.handleInput = function(key){
   this.update(key)
-  let y = this.update(key)['y']
-  if (y === -20) {
-    console.log('yay you won!')
-  }
+  this.update(key) === -20 ? this.reset() : null
 };
 
 var player = new Player()
@@ -71,9 +73,9 @@ var player = new Player()
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-let bug1 = new Enemy(0, 60, 50); //(x, y, speed)
-let bug2 = new Enemy(0, 150, 30);
-let bug3 = new Enemy(0, 230, 70);
+let bug1 = new Enemy(0, 60, 60); //(x, y, speed)
+let bug2 = new Enemy(-10, 150, 50);
+let bug3 = new Enemy(0, 230, 80);
 var allEnemies = [bug1, bug2, bug3];
 
 // This listens for key presses and sends the keys to your
