@@ -77,18 +77,23 @@ Player.prototype.handleInput = function(key){
 
   this.update(key)
   //console.log(this.y)
-  this.y === -20 ? this.reset() : null
+  const hasWon = this.y === -20
+  // this.y === -20 ? this.reset() : null
+  if(hasWon) {
+    alert('You made it!!')
+    this.reset()
+  }
 };
 
-var player = new Player()
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 let bug1 = new Enemy(0, 70, 60); //(x, y, speed)
 let bug2 = new Enemy(0, 130, 140);
 let bug3 = new Enemy(0, 220, 100);
 var allEnemies = [bug1, bug2, bug3];
+// Place the player object in a variable called player
+var player = new Player()
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
